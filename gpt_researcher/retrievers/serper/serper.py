@@ -51,7 +51,7 @@ class SerperSearch():
         }
         data = json.dumps({"q": self.query})
 
-        resp = requests.request("POST", url, headers=headers, data=data)
+        resp = requests.request("POST", url, headers=headers, data=data, timeout=60)
 
         # Preprocess the results
         if resp is None:
