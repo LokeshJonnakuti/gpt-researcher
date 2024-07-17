@@ -59,7 +59,7 @@ class GoogleSearch:
         """Useful for general internet search queries using the Google API."""
         print("Searching with query {0}...".format(self.query))
         url = f"https://www.googleapis.com/customsearch/v1?key={self.api_key}&cx={self.cx_key}&q={self.query}&start=1"
-        resp = requests.get(url)
+        resp = requests.get(url, timeout=60)
 
         if resp is None:
             return

@@ -48,7 +48,7 @@ class SerpApiSearch():
         # Encoding should look something like this (but this is untested):
         # url_encoded_query = self.query.replace(" ", "+")
         url = "https://serpapi.com/search.json?engine=google&q=" + self.query + "&api_key=" + self.api_key
-        resp = requests.request("GET", url)
+        resp = requests.request("GET", url, timeout=60)
 
         # Preprocess the results
         if resp is None:
